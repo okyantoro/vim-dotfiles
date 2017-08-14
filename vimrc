@@ -45,7 +45,6 @@ Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 
 set t_Co=256
-syntax on
 set background=dark
 colorscheme molokai
 
