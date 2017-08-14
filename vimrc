@@ -1,7 +1,17 @@
 set nocompatible
 filetype off
 
+syntax on
+filetype plugin indent on
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set splitbelow
+set splitright
+
 " set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/typescript-vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -31,21 +41,13 @@ let g:syntastic_check_on_open=1
 "let g:ycm_confirm_extra_conf=0
 "set completeopt-=preview
 "Plugin 'marijnh/tern_for_vim'
+Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 
 set t_Co=256
 syntax on
 set background=dark
 colorscheme molokai
-
-syntax on
-filetype plugin indent on
-set tabstop=4
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set splitbelow
-set splitright
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
