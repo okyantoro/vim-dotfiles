@@ -9,6 +9,8 @@ set shiftwidth=4
 set softtabstop=4
 set splitbelow
 set splitright
+set laststatus=2
+set t_Co=256
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/typescript-vim
@@ -22,6 +24,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here
+"Airline theme
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-fugitive'
@@ -42,11 +45,14 @@ let g:syntastic_check_on_open=1
 "set completeopt-=preview
 "Plugin 'marijnh/tern_for_vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 
-set t_Co=256
-set background=dark
-colorscheme molokai
+"set background=dark
+"colorscheme vim-material
+
+let g:airline_theme='light'
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
