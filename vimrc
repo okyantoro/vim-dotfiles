@@ -35,7 +35,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 " Need this?
 let g:syntastic_check_on_open=1
 "Plugin 'Valloric/YouCompleteMe'
@@ -47,12 +47,21 @@ let g:syntastic_check_on_open=1
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+"Scala Development
+Plugin 'ensime/ensime-vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 
 "set background=dark
 "colorscheme vim-material
 
 let g:airline_theme='light'
+
+"Scala Development
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <localleader>t :EnType<CR>
+au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -63,5 +72,9 @@ nnoremap <C-H> <C-W><C-H>
 " mapping
 imap <C-c> <CR><Esc>O
 
-
+" don't use arrow key to navigate
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
 
