@@ -48,8 +48,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Scala Development
-Plugin 'ensime/ensime-vim'
-Plugin 'derekwyatt/vim-scala'
+"Plugin 'ensime/ensime-vim'
+" Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 
