@@ -3,78 +3,22 @@ filetype off
 
 syntax on
 filetype plugin indent on
-set tabstop=4
-set expandtab
-set shiftwidth=4
+set tabstop=4 "The number of space for a tab
+set expandtab "Insert space characters whenever the tab key is pressed
+set shiftwidth=4 "The number of space characters inserted for indentation
 set softtabstop=4
-set splitbelow
-set splitright
-set laststatus=2
-set t_Co=256
+set encoding=utf-8 fileencodings= "Use utf8 by default
+set hlsearch "Hilight search by default
+set splitbelow "Split buffer below
+set splitright "Split buffer right
+set laststatus=2 "Always show status line
+set t_Co=256 "Enable 256 colors
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/typescript-vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-" Add all your plugins here
-"Airline theme
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-distinguished'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'endel/vim-github-colorscheme'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Raimondi/delimitMate'
-"Plugin 'scrooloose/syntastic'
-" Need this?
-let g:syntastic_check_on_open=1
-"Plugin 'Valloric/YouCompleteMe'
-" some config for code completion
-"let g:ycm_add_preview_to_completeopt=0
-"let g:ycm_confirm_extra_conf=0
-"set completeopt-=preview
-"Plugin 'marijnh/tern_for_vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-"Scala Development
-"Plugin 'ensime/ensime-vim'
-" Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-syntastic/syntastic'
 call vundle#end()
-
-"set background=dark
-"colorscheme vim-material
-
-let g:airline_theme='light'
-
-"Scala Development
-autocmd BufWritePost *.scala silent :EnTypeCheck
-nnoremap <localleader>t :EnType<CR>
-au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
-
-" split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" mapping
-imap <C-c> <CR><Esc>O
-
-" don't use arrow key to navigate
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
