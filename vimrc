@@ -22,3 +22,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 call vundle#end()
+
+" don't use arrow key to navigate
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
