@@ -28,6 +28,9 @@ Plugin 'editorconfig/editorconfig-vim'
 " Python
 Plugin 'hdima/python-syntax'
 
+" Golang
+Plugin 'fatih/vim-go'
+
 call vundle#end()
 
 " Python highlight
