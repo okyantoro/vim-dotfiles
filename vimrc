@@ -14,6 +14,7 @@ set splitright "Split buffer right
 set laststatus=2 "Always show status line
 set t_Co=256 "Enable 256 colors
 set autoindent
+set ruler
 " set colorcolumn=80 "Column marker
 " set number
 
