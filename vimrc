@@ -3,48 +3,77 @@ filetype off
 
 syntax on
 filetype plugin indent on
-set tabstop=4 "The number of space for a tab
-set expandtab "Insert space characters whenever the tab key is pressed
-set shiftwidth=4 "The number of space characters inserted for indentation
-set softtabstop=4
-set encoding=utf-8 fileencodings= "Use utf8 by default
-set hlsearch "Hilight search by default
-set splitbelow "Split buffer below
-set splitright "Split buffer right
-set laststatus=2 "Always show status line
-set t_Co=256 "Enable 256 colors
+set encoding=utf-8
+set clipboard=unnamed
+set hlsearch
+set t_Co=256
 set autoindent
-set ruler
-" set colorcolumn=80 "Column marker
-" set number
+set laststatus=2
 
-" set the runtime path to include Vundle and initialize
+" Indentation related stuffs
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set splitbelow
+set splitright
+
+" Python
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'editorconfig/editorconfig-vim'
+Plugin 'gmarik/Vundle.vim'
 
-" Python
-Plugin 'hdima/python-syntax'
+Plugin 'tmhedberg/SimpylFold'
 
-" Golang
-Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/indentpython.vim'
+
+Plugin 'vim-syntastic/syntastic'
+
+Plugin 'nvie/vim-flake8'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
-" Python highlight
-let python_highlight_all = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#branch#enabled = 1
+let g:airline_powerline_fonts = 1
 
-" don't use arrow key to navigate
+let NERDTreeIgnore=['\.pyc$', '\~$'] 
+
+let python_highlight_all=1
+let g:SimplyFold_docstring_preview=1
+
+" disable arrows
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-" Moving around buffers
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
